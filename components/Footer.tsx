@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import SocialIcons from './SocialIcons';
 
 const Footer: FC = () => {
   const contractAddress = "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN";
@@ -40,38 +41,7 @@ const Footer: FC = () => {
           {/* Social Column */}
           <div>
             <h3 className="text-sm font-medium text-gray-900 mb-4">Social</h3>
-            <ul className="space-y-3">
-              <li>
-                <a 
-                  href="https://twitter.com/MCGAToken" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://t.me/MCGAToken" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  Telegram
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://discord.gg/MCGAToken" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  Discord
-                </a>
-              </li>
-            </ul>
+            <SocialIcons />
           </div>
 
           {/* Resources Column */}
