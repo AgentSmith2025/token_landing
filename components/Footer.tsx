@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { Discord, Telegram, Twitter } from './icons';
+import Discord from './icons/Discord';
+import Telegram from './icons/Telegram';
+import Twitter from './icons/Twitter';
 
 const Footer: FC = () => {
   const contractAddress = "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN";
