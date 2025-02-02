@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import TelegramIcon from './icons/Telegram';
+import { Telegram as TelegramIcon } from './icons/Telegram';
 
 const NavButtons = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

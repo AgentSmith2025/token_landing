@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, MouseEvent } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import NavButtons from '../components/NavButtons';
@@ -12,13 +12,16 @@ const Home: FC = () => {
     contractAddress: "6p5xgrFyF7AeE6TZkSmFsko444wqoPt5tcUSqi2jfGiPN",
   };
 
-  const [faqOpen, setFaqOpen] = useState({});
+  const [faqOpen, setFaqOpen] = useState<{ [key: string]: boolean }>({});
 
-  const toggleFAQ = (e) => {
-    const faqId = e.target.parentNode.id;
-    setFaqOpen((prevFaqOpen) => {
-      return { ...prevFaqOpen, [faqId]: !prevFaqOpen[faqId] };
-    });
+  const toggleFAQ = (e: MouseEvent<HTMLElement>) => {
+    const target = e.target as HTMLElement;
+    const faqId = target.parentElement?.id;
+    if (faqId) {
+      setFaqOpen((prevFaqOpen) => {
+        return { ...prevFaqOpen, [faqId]: !prevFaqOpen[faqId] };
+      });
+    }
   };
 
   return (
