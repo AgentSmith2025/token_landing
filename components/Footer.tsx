@@ -1,130 +1,126 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import Link from 'next/link';
-import Discord from './icons/Discord';
-import Telegram from './icons/Telegram';
-import Twitter from './icons/Twitter';
+import dynamic from 'next/dynamic';
+
+// Lazy load icons
+const Telegram = dynamic(() => import('./icons/Telegram').then(mod => mod.Telegram));
+const Twitter = dynamic(() => import('./icons/Twitter').then(mod => mod.Twitter));
+const Discord = dynamic(() => import('./icons/Discord').then(mod => mod.Discord));
 
 const Footer: FC = () => {
   const contractAddress = "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN";
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
-  const handleCopyAddress = () => {
-    navigator.clipboard.writeText(contractAddress);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Contract Address */}
-        <div className="mb-12">
-          <h3 className="text-lg font-medium text-gray-900 mb-4">Contract Address</h3>
-          <div className="bg-white p-4 rounded-lg flex items-center justify-between border border-gray-200">
-            <code className="text-sm text-gray-600">{contractAddress}</code>
-            <button 
-              onClick={handleCopyAddress}
-              className="ml-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
-            >
-              Copy Address
-            </button>
-          </div>
-        </div>
-
-        {/* Footer Links */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {/* Links Column */}
-          <div>
-            <h3 className="text-sm font-medium text-gray-900 mb-4">Links</h3>
-            <ul className="space-y-3">
-              <li><Link href="/" className="text-gray-600 hover:text-gray-900">Home</Link></li>
-              <li><Link href="/how-to-buy" className="text-gray-600 hover:text-gray-900">How to Buy</Link></li>
-              <li><Link href="/tokenomics" className="text-gray-600 hover:text-gray-900">Tokenomics</Link></li>
-            </ul>
-          </div>
-
-          {/* Social Column */}
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <p className="text-gray-500">Join our communities:</p>
+    <>
+      <footer className="bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8">
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider">Quick Links</h3>
+              <ul className="mt-4 space-y-4">
+                <li>
+                  <Link href="#about" className="text-gray-400 hover:text-gray-300 transition-colors duration-200">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#howtobuy" className="text-gray-400 hover:text-gray-300 transition-colors duration-200">
+                    How to Buy
+                  </Link>
+                </li>
+              </ul>
             </div>
-            <div className="flex items-center space-x-4">
-              <a
-                href="https://t.me/mcgasolana"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-500"
-              >
-                <span className="sr-only">Telegram</span>
-                <Telegram className="h-6 w-6" />
-              </a>
-              <a
-                href="https://twitter.com/mcgasolana"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-500"
-              >
-                <span className="sr-only">Twitter</span>
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a
-                href="https://discord.gg/mcgasolana"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-500"
-              >
-                <span className="sr-only">Discord</span>
-                <Discord className="h-6 w-6" />
-              </a>
+
+            {/* Contract */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider">Contract</h3>
+              <div className="mt-4">
+                <p className="text-gray-400 break-all">
+                  {contractAddress}
+                </p>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="col-span-2 md:col-span-2">
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Connect With Us</h3>
+              <div className="flex space-x-6">
+                <a
+                  href="https://t.me/mcgasolana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-gray-300 transition-all duration-200 transform hover:scale-105"
+                  aria-label="Visit our Telegram channel"
+                >
+                  <Telegram className="h-6 w-6" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://twitter.com/mcgasolana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-gray-300 transition-all duration-200 transform hover:scale-105"
+                  aria-label="Follow us on Twitter"
+                >
+                  <Twitter className="h-6 w-6" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://discord.gg/mcgasolana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-gray-300 transition-all duration-200 transform hover:scale-105"
+                  aria-label="Join our Discord server"
+                >
+                  <Discord className="h-6 w-6" aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Resources Column */}
-          <div>
-            <h3 className="text-sm font-medium text-gray-900 mb-4">Resources</h3>
-            <ul className="space-y-3">
-              <li>
-                <a 
-                  href="https://raydium.io/swap" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  Buy on Raydium
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://solscan.io" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-gray-900"
-                >
-                  View on Solscan
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal Column */}
-          <div>
-            <h3 className="text-sm font-medium text-gray-900 mb-4">Legal</h3>
-            <ul className="space-y-3">
-              <li><Link href="/terms" className="text-gray-600 hover:text-gray-900">Terms & Conditions</Link></li>
-              <li><Link href="/privacy" className="text-gray-600 hover:text-gray-900">Privacy Policy</Link></li>
-            </ul>
+          {/* Copyright */}
+          <div className="mt-8 pt-8 border-t border-gray-800">
+            <p className="text-gray-400 text-sm text-center">
+              {new Date().getFullYear()} MCGA Token. All Rights Reserved.
+            </p>
           </div>
         </div>
+      </footer>
 
-        {/* Disclaimer */}
-        <div className="border-t border-gray-200 pt-8">
-          <p className="text-sm text-gray-600 text-center mb-4">
-            MCGA Token is a parody meme token not endorsed by any political figure or official entity. 
-            This is not financial advice. Cryptocurrency investments are risky - please do your own research.
-          </p>
-          <p className="text-sm text-gray-600 text-center">
-            {new Date().getFullYear()} MCGA Token. All Rights Reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
+      {/* Back to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 p-3 bg-red-600 text-white rounded-full shadow-lg hover:bg-red-700 transition-colors duration-200 z-50"
+          aria-label="Scroll to top"
+        >
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
+      )}
+    </>
   );
 };
 
