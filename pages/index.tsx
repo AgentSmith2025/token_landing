@@ -43,7 +43,7 @@ const Home: FC = () => {
             Make Crypto Great Again
           </h1>
           <p className="hero-subtitle whitespace-nowrap">
-            The People's Meme Token on Solana
+            The People&apos;s Meme Token on Solana
           </p>
 
           {/* Hero Image */}
@@ -284,7 +284,7 @@ const Home: FC = () => {
                   </svg>
                 </button>
                 <div className={`faq-answer ${faqOpen['faq-3'] ? 'block' : 'hidden'}`}>
-                  <p>You can buy $MCGA on Raydium DEX. Simply connect your Phantom wallet, swap SOL for $MCGA, and you'll receive your tokens instantly in your wallet.</p>
+                  <p>You can buy $MCGA on Raydium DEX. Simply connect your Phantom wallet, swap SOL for $MCGA, and you&apos;ll receive your tokens instantly in your wallet.</p>
                 </div>
               </div>
 
