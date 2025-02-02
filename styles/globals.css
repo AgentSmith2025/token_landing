@@ -4,35 +4,97 @@
 
 @layer base {
   :root {
-    --color-primary: 59 130 246;
-    --color-secondary: 16 185 129;
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
+    --color-primary: #000000;
+    --color-secondary: #f5f5f5;
+    --color-accent: #e5e5e5;
+    --gradient-angle: -45deg;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white;
+    background: radial-gradient(circle at 50% 50%, rgba(147, 197, 253, 0.3), rgba(255, 255, 255, 0.6)),
+                linear-gradient(45deg, rgba(147, 197, 253, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
+    background-size: 200% 200%, 100% 100%;
+    animation: moveGradient 15s ease infinite;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
   }
 }
 
-body {
-  @apply text-base leading-normal;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%, 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%;
+  }
 }
 
 @layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
   .btn {
-    @apply px-6 py-3 rounded-full transition-all duration-300 ease-in-out;
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300;
   }
 
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary-dark;
+    @apply bg-black text-white hover:bg-gray-900;
   }
 
   .btn-secondary {
-    @apply border border-primary text-primary hover:bg-primary hover:text-white;
+    @apply bg-gray-100 text-gray-900 hover:bg-gray-200;
+  }
+
+  .nav-link {
+    @apply text-sm text-gray-600 hover:text-gray-900 transition-colors;
+  }
+
+  .heading-xl {
+    @apply text-5xl md:text-6xl lg:text-7xl font-serif font-medium leading-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl md:text-4xl lg:text-5xl font-serif font-medium leading-tight;
+  }
+
+  .subtitle {
+    @apply text-lg md:text-xl text-gray-600 leading-relaxed;
+  }
+
+  .card {
+    @apply bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .feature-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+  }
+
+  .price-card {
+    @apply bg-white p-8 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(180deg, #93c5fd 0%, #ffffff 100%);
+    min-height: 100vh;
+  }
+
+  .section-white {
+    @apply bg-white py-24;
+  }
+
+  .section-gradient {
+    background: linear-gradient(180deg, #93c5fd 0%, #ffffff 100%);
+    @apply py-24;
   }
 }

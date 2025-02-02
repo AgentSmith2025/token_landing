@@ -1,86 +1,124 @@
 import { FC } from 'react';
+import Image from 'next/image';
 
 const HeroSection: FC = () => {
   return (
-    <div className="min-h-screen bg-red-600 bg-stripes">
-      <div className="container mx-auto px-4 py-12 text-center">
-        <div className="mb-8 border-8 border-yellow-400 bg-blue-900 p-8 shadow-[0_0_40px_10px_rgba(255,255,255,0.3)]">
-          <h1 className="text-6xl md:text-8xl font-black uppercase mb-4 text-white 
-            [text-shadow:_4px_4px_0_#000] animate-bounce">
-            MAKE CRYPTO<br/>GREAT AGAIN
+    <div className="bg-white">
+      {/* Main Hero */}
+      <div className="container-custom py-24">
+        <div className="text-center max-w-4xl mx-auto mb-24">
+          <h1 className="heading-xl mb-6">
+            Make Crypto Great Again.
+            <br />
+            No hassle.
           </h1>
-          <div className="inline-block bg-white p-4 rounded-full">
-            <p className="text-2xl md:text-3xl font-bold text-red-600">
-              1000X POTENTIAL | FAIR LAUNCH | MADE IN AMERICA
-            </p>
-          </div>
+          <p className="subtitle mb-8">
+            Join the revolution with the most patriotic token on the blockchain. 
+            Simple, secure, and built for true believers.
+          </p>
+          <button className="btn btn-primary">
+            Get Started
+          </button>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white p-8 rounded-xl border-4 border-black">
-            <h2 className="text-3xl font-bold mb-6 text-red-600">BUY $MCGA NOW!</h2>
-            <div className="space-y-4">
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white 
-                text-2xl p-4 rounded-lg border-4 border-yellow-400 flex items-center 
-                justify-center gap-3 transition-all">
-                INSTANT CARD BUY
-              </button>
-              <button className="w-full bg-black hover:bg-gray-900 text-yellow-400 
-                text-2xl p-4 rounded-lg border-4 border-white flex items-center 
-                justify-center gap-3 transition-all">
-                CRYPTO SWAP
-              </button>
-            </div>
-            <div className="mt-8 bg-gray-100 p-4 rounded-lg text-left">
-              <p className="font-mono text-sm break-all">
-                CONTRACT: 0xMG4...C0IN
-              </p>
-              <p className="text-red-600 font-bold mt-2">
-                ONLY BUY THROUGH OFFICIAL LINKS
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-yellow-400 p-8 rounded-xl border-4 border-black">
-            <div className="bg-white p-6 rounded-lg mb-6">
-              <h3 className="text-3xl font-black text-red-600 mb-4">
-                AMERICA FIRST CRYPTO
-              </h3>
-              <p className="text-lg font-bold mb-4">
-                "We're gonna build the wall around shitcoins and make Ethereum pay for it!"
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: '', value: '1B MCGA', label: 'Total Supply' },
-                { icon: '', value: '36 MO', label: 'Locked' },
-                { icon: '', value: '1000X', label: 'Potential' },
-                { icon: '', value: '100%', label: 'American' }
-              ].map((item, index) => (
-                <div key={index} className="bg-white p-4 rounded-lg border-2 border-black">
-                  <div className="text-3xl mb-2">{item.icon}</div>
-                  <div className="font-bold text-xl">{item.value}</div>
-                  <div className="text-sm">{item.label}</div>
-                </div>
-              ))}
+        {/* Phone Mockup */}
+        <div className="relative max-w-2xl mx-auto">
+          <div className="absolute -inset-4 bg-gradient-to-r from-red-500/30 to-blue-500/30 blur-3xl" />
+          <div className="relative">
+            <div className="aspect-[4/3] bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 flex items-center justify-center">
+              <div className="text-white text-xl">App Preview Coming Soon</div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="bg-white p-8 rounded-xl border-4 border-black text-left">
-          <h2 className="text-3xl font-black text-red-600 mb-6">FREQUENTLY ASKED QUESTIONS</h2>
-          <div className="space-y-4">
-            {[
-              { question: 'IS THIS OFFICIAL?', answer: 'THE ONLY OFFICIAL MCGA TOKEN!' },
-              { question: 'WHY NO KYC?', answer: 'TRUE FREEDOM NEEDS NO PERMISSION' },
-              { question: 'WHICH CHAIN?', answer: 'PATRIOT CHAIN (ERC-20)' }
-            ].map((item, index) => (
-              <div key={index} className="border-2 border-black p-4 rounded-lg">
-                <div className="font-bold text-red-600 text-xl"> {item.question}</div>
-                <div className="font-semibold mt-2">{item.answer}</div>
-              </div>
-            ))}
+      {/* Features */}
+      <div className="container-custom py-24 bg-gray-50">
+        <div className="feature-grid">
+          <div className="text-center">
+            <div className="mb-4">🚀</div>
+            <h3 className="text-xl font-medium mb-2">Limitless Gains</h3>
+            <p className="text-gray-600">Reach for the moon with unrestricted growth potential</p>
           </div>
+          <div className="text-center">
+            <div className="mb-4">🔒</div>
+            <h3 className="text-xl font-medium mb-2">Unbreakable Security</h3>
+            <p className="text-gray-600">Your freedom is protected by military-grade encryption</p>
+          </div>
+          <div className="text-center">
+            <div className="mb-4">🇺🇸</div>
+            <h3 className="text-xl font-medium mb-2">American Made</h3>
+            <p className="text-gray-600">Built by patriots, for patriots</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Pricing */}
+      <div className="container-custom py-24">
+        <div className="text-center mb-16">
+          <h2 className="heading-lg mb-4">A US token,<br />with peace of mind.</h2>
+          <p className="subtitle">Start your patriotic journey with our simple pricing plan.</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="price-card">
+            <div className="text-2xl font-medium mb-2">Basic Plan</div>
+            <div className="text-4xl font-bold mb-6">$69</div>
+            <ul className="space-y-3 text-gray-600 mb-8">
+              <li>✓ 1,000 MCGA Tokens</li>
+              <li>✓ Basic Trading</li>
+              <li>✓ Community Access</li>
+            </ul>
+            <button className="btn btn-primary w-full">Buy Now</button>
+          </div>
+          <div className="price-card border-2 border-black">
+            <div className="text-2xl font-medium mb-2">Patriot Plan</div>
+            <div className="text-4xl font-bold mb-6">$420</div>
+            <ul className="space-y-3 text-gray-600 mb-8">
+              <li>✓ 10,000 MCGA Tokens</li>
+              <li>✓ Advanced Trading</li>
+              <li>✓ VIP Community Access</li>
+            </ul>
+            <button className="btn btn-primary w-full">Buy Now</button>
+          </div>
+          <div className="price-card">
+            <div className="text-2xl font-medium mb-2">Freedom Plan</div>
+            <div className="text-4xl font-bold mb-6">$1776</div>
+            <ul className="space-y-3 text-gray-600 mb-8">
+              <li>✓ 100,000 MCGA Tokens</li>
+              <li>✓ Unlimited Trading</li>
+              <li>✓ Elite Community Access</li>
+            </ul>
+            <button className="btn btn-primary w-full">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Coverage */}
+      <div className="container-custom py-24 bg-gray-50">
+        <div className="text-center mb-16">
+          <h2 className="heading-lg mb-4">Our coverage?<br />Glad you asked.</h2>
+          <p className="subtitle">Available on all major exchanges and platforms.</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-60">
+          {/* Add exchange logos here */}
+          <div>Exchange 1</div>
+          <div>Exchange 2</div>
+          <div>Exchange 3</div>
+          <div>Exchange 4</div>
+          <div>Exchange 5</div>
+          <div>Exchange 6</div>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="container-custom py-24">
+        <div className="bg-black text-white rounded-3xl p-12 text-center">
+          <h2 className="heading-lg mb-4">Get connected<br />in 60 seconds.</h2>
+          <p className="subtitle text-gray-400 mb-8">One plan. One token. Infinite possibilities.</p>
+          <button className="btn bg-white text-black hover:bg-gray-100">
+            Start Now
+          </button>
         </div>
       </div>
     </div>

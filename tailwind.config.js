@@ -3,27 +3,49 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./styles/**/*.css"
   ],
-  darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage: {
-        'stripes': "linear-gradient(45deg, #ffffff22 25%, transparent 25%, transparent 50%, #ffffff22 50%, #ffffff22 75%, transparent 75%, transparent)",
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
       },
       colors: {
         primary: {
-          DEFAULT: 'rgb(var(--color-primary) / <alpha-value>)',
-          dark: 'rgb(var(--color-secondary) / <alpha-value>)'
-        }
+          50: '#f5f5f5',
+          100: '#e5e5e5',
+          200: '#cccccc',
+          300: '#b3b3b3',
+          400: '#999999',
+          500: '#808080',
+          600: '#666666',
+          700: '#4d4d4d',
+          800: '#333333',
+          900: '#1a1a1a',
+        },
       },
       animation: {
-        bounce: 'bounce 2s infinite',
-        'text-blink': 'blink 1s step-end infinite',
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'slide-down': 'slideDown 0.3s ease-out',
       },
       keyframes: {
-        blink: { '50%': { opacity: '0' } }
-      }
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideDown: {
+          '0%': { transform: 'translateY(-20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [
