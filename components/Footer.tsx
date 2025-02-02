@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import SocialIcons from './SocialIcons';
+import { Discord, Telegram, Twitter } from './icons';
 
 const Footer: FC = () => {
   const contractAddress = "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN";
@@ -19,7 +19,7 @@ const Footer: FC = () => {
             <code className="text-sm text-gray-600">{contractAddress}</code>
             <button 
               onClick={handleCopyAddress}
-              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors"
+              className="ml-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
             >
               Copy Address
             </button>
@@ -39,9 +39,39 @@ const Footer: FC = () => {
           </div>
 
           {/* Social Column */}
-          <div>
-            <h3 className="text-sm font-medium text-gray-900 mb-4">Social</h3>
-            <SocialIcons />
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-4 md:mb-0">
+              <p className="text-gray-500">Join our communities:</p>
+            </div>
+            <div className="flex items-center space-x-4">
+              <a
+                href="https://t.me/mcgasolana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <span className="sr-only">Telegram</span>
+                <Telegram className="h-6 w-6" />
+              </a>
+              <a
+                href="https://twitter.com/mcgasolana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <span className="sr-only">Twitter</span>
+                <Twitter className="h-6 w-6" />
+              </a>
+              <a
+                href="https://discord.gg/mcgasolana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <span className="sr-only">Discord</span>
+                <Discord className="h-6 w-6" />
+              </a>
+            </div>
           </div>
 
           {/* Resources Column */}
