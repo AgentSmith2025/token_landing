@@ -28,7 +28,7 @@ const Footer: FC = () => {
     <>
       <footer className="bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Quick Links */}
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-wider">Quick Links</h3>
@@ -50,7 +50,7 @@ const Footer: FC = () => {
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-wider">Contract</h3>
               <div className="mt-4">
-                <p className="text-gray-400 break-all">
+                <p className="text-gray-400 break-all text-sm">
                   {contractAddress}
                 </p>
               </div>
@@ -58,11 +58,11 @@ const Footer: FC = () => {
 
             {/* Contact */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider">Contact</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-wider">Contact Us</h3>
               <div className="mt-4">
                 <a 
                   href="mailto:info@getmcgatoken.com"
-                  className="text-gray-400 hover:text-gray-300 transition-colors duration-200"
+                  className="text-gray-400 hover:text-gray-300 transition-colors duration-200 text-sm"
                 >
                   info@getmcgatoken.com
                 </a>
@@ -70,7 +70,7 @@ const Footer: FC = () => {
             </div>
 
             {/* Social Links */}
-            <div className="col-span-2 md:col-span-2">
+            <div>
               <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Connect With Us</h3>
               <div className="flex space-x-6">
                 <a
