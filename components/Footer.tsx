@@ -28,10 +28,10 @@ const Footer: FC = () => {
     <>
       <footer className="bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Quick Links */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider">Quick Links</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h3>
               <ul className="mt-4 space-y-4">
                 <li>
                   <Link href="#about" className="text-gray-400 hover:text-gray-300 transition-colors duration-200">
@@ -48,7 +48,7 @@ const Footer: FC = () => {
 
             {/* Contract */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider">Contract</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Contract</h3>
               <div className="mt-4">
                 <p className="text-gray-400 break-all text-sm">
                   {contractAddress}
@@ -57,12 +57,12 @@ const Footer: FC = () => {
             </div>
 
             {/* Contact */}
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider">Contact Us</h3>
+            <div className="md:col-span-2 lg:col-span-1">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Contact Us</h3>
               <div className="mt-4">
                 <a 
                   href="mailto:info@getmcgatoken.com"
-                  className="text-gray-400 hover:text-gray-300 transition-colors duration-200 text-sm"
+                  className="inline-block text-gray-300 hover:text-white transition-colors duration-200 text-base border-b border-gray-700 hover:border-gray-500"
                 >
                   info@getmcgatoken.com
                 </a>
@@ -70,8 +70,8 @@ const Footer: FC = () => {
             </div>
 
             {/* Social Links */}
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Connect With Us</h3>
+            <div className="md:col-span-2 lg:col-span-1">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Connect With Us</h3>
               <div className="flex space-x-6">
                 <a
                   href="https://t.me/mcgasolana"
