@@ -29,6 +29,14 @@ const Home: FC = () => {
       <Head>
         <title>MCGA – Make Crypto Great Again | Affordable Meme Token on Solana</title>
         <meta name="description" content="Join the movement to restore fun in crypto with MCGA, a low-cost Solana-based meme token. Invest for less than the price of a coffee." />
+        <meta property="og:title" content="MCGA – Make Crypto Great Again | Affordable Meme Token on Solana" />
+        <meta property="og:description" content="Join the movement to restore fun in crypto with MCGA, a low-cost Solana-based meme token. Invest for less than the price of a coffee." />
+        <meta property="og:url" content="https://www.getmcgatoken.com" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="MCGA – Make Crypto Great Again" />
+        <meta name="twitter:description" content="Join the movement to restore fun in crypto with MCGA, a low-cost Solana-based meme token." />
+        <link rel="canonical" href="https://www.getmcgatoken.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
