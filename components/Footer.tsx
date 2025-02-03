@@ -56,6 +56,19 @@ const Footer: FC = () => {
               </div>
             </div>
 
+            {/* Contact */}
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider">Contact</h3>
+              <div className="mt-4">
+                <a 
+                  href="mailto:info@getmcgatoken.com"
+                  className="text-gray-400 hover:text-gray-300 transition-colors duration-200"
+                >
+                  info@getmcgatoken.com
+                </a>
+              </div>
+            </div>
+
             {/* Social Links */}
             <div className="col-span-2 md:col-span-2">
               <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Connect With Us</h3>
