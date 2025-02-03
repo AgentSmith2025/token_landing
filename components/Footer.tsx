@@ -25,93 +25,79 @@ const Footer: FC = () => {
   };
 
   return (
-    <>
-      <footer className="bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <Link href="#about" className="text-gray-400 hover:text-gray-300 transition-colors duration-200">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#howtobuy" className="text-gray-400 hover:text-gray-300 transition-colors duration-200">
-                    How to Buy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contract */}
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Contract</h3>
-              <div className="mt-4">
-                <p className="text-gray-400 break-all text-sm">
-                  {contractAddress}
-                </p>
-              </div>
-            </div>
-
-            {/* Contact */}
-            <div className="md:col-span-2 lg:col-span-1">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Contact Us</h3>
-              <div className="mt-4">
-                <a 
-                  href="mailto:info@getmcgatoken.com"
-                  className="inline-block text-gray-300 hover:text-white transition-colors duration-200 text-base border-b border-gray-700 hover:border-gray-500"
-                >
-                  info@getmcgatoken.com
-                </a>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="md:col-span-2 lg:col-span-1">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Connect With Us</h3>
-              <div className="flex space-x-6">
-                <a
-                  href="https://t.me/mcgasolana"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-gray-300 transition-all duration-200 transform hover:scale-105"
-                  aria-label="Visit our Telegram channel"
-                >
-                  <Telegram className="h-6 w-6" aria-hidden="true" />
-                </a>
-                <a
-                  href="https://twitter.com/mcgasolana"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-gray-300 transition-all duration-200 transform hover:scale-105"
-                  aria-label="Follow us on Twitter"
-                >
-                  <Twitter className="h-6 w-6" aria-hidden="true" />
-                </a>
-                <a
-                  href="https://discord.gg/mcgasolana"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-gray-300 transition-all duration-200 transform hover:scale-105"
-                  aria-label="Join our Discord server"
-                >
-                  <Discord className="h-6 w-6" aria-hidden="true" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="mt-8 pt-8 border-t border-gray-800">
-            <p className="text-gray-400 text-sm text-center">
-              {new Date().getFullYear()} MCGA Token. All Rights Reserved.
-            </p>
-          </div>
+    <footer className="bg-gray-900 text-white py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Social Links */}
+        <div className="flex justify-center space-x-4 mb-4">
+          <a
+            href="https://t.me/mcgasolana"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-800/50 p-2.5 rounded-lg text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-105 hover:bg-gray-700"
+            aria-label="Telegram"
+          >
+            <Telegram className="h-5 w-5" />
+          </a>
+          <a
+            href="https://twitter.com/mcgasolana"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-800/50 p-2.5 rounded-lg text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-105 hover:bg-gray-700"
+            aria-label="Twitter"
+          >
+            <Twitter className="h-5 w-5" />
+          </a>
+          <a
+            href="https://discord.gg/mcgasolana"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-800/50 p-2.5 rounded-lg text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-105 hover:bg-gray-700"
+            aria-label="Discord"
+          >
+            <Discord className="h-5 w-5" />
+          </a>
+          <a
+            href="mailto:info@getmcgatoken.com"
+            className="bg-gray-800/50 p-2.5 rounded-lg text-gray-400 hover:text-white transition-all duration-200 transform hover:scale-105 hover:bg-gray-700"
+            aria-label="Email"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+          </a>
         </div>
-      </footer>
+
+        {/* Contract Address */}
+        <p className="text-sm text-gray-400 font-mono bg-gray-800/30 px-4 py-2 rounded-lg inline-block">
+          Contract Address: {contractAddress}
+        </p>
+
+        {/* Links */}
+        <div className="flex justify-center mt-4 space-x-6 text-sm">
+          <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
+            About
+          </Link>
+          <Link href="/howtobuy" className="text-gray-400 hover:text-white transition-colors">
+            How to Buy
+          </Link>
+          <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
+            Terms & Conditions
+          </Link>
+        </div>
+
+        {/* Copyright */}
+        <p className="text-xs text-gray-500 mt-4">
+          {new Date().getFullYear()} MCGA Token. All Rights Reserved.
+        </p>
+      </div>
 
       {/* Back to Top Button */}
       {showScrollTop && (
@@ -125,7 +111,7 @@ const Footer: FC = () => {
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth="2"
+            strokeWidth={2}
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
@@ -133,7 +119,7 @@ const Footer: FC = () => {
           </svg>
         </button>
       )}
-    </>
+    </footer>
   );
 };
 
