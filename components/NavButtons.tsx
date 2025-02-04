@@ -1,7 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Telegram as TelegramIcon } from './icons/Telegram';
 
 const NavButtons: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +26,7 @@ const NavButtons: FC = () => {
   };
 
   const navLinks = [
-    { href: '/', label: 'Home' },
+    { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
     { href: '#tokenomics', label: 'Tokenomics' },
     { href: '#roadmap', label: 'Roadmap' },
@@ -36,25 +35,24 @@ const NavButtons: FC = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
       isScrolled || isOpen ? 'bg-white shadow-md' : 'bg-white/80 backdrop-blur-md'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative w-16 h-16">
+          <Link href="/" className="flex items-center space-x-2 group" onClick={closeMenu}>
+            <div className="relative w-12 h-12">
               <Image 
                 src="/images/logo.png"
                 alt="$MCGA Logo"
-                width={250}
-                height={250}
+                width={48}
+                height={48}
                 className="object-contain"
                 priority
-                quality={100}
               />
             </div>
-            <span className="text-2xl font-bold text-gray-900">
+            <span className="text-xl font-bold text-gray-900">
               <span className="text-red-600">$</span>MCGA
             </span>
           </Link>
@@ -62,14 +60,14 @@ const NavButtons: FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
                 className="text-gray-600 hover:text-red-600 transition-colors duration-200 font-medium"
                 onClick={closeMenu}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
             <a
               href="https://raydium.io/swap"
@@ -114,14 +112,14 @@ const NavButtons: FC = () => {
       >
         <div className="px-4 pt-2 pb-3 space-y-1">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-red-600 hover:bg-gray-50"
               onClick={closeMenu}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
           <div className="mt-4 px-3">
             <a

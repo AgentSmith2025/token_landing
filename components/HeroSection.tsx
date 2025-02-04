@@ -1,36 +1,50 @@
 import { FC } from 'react';
+import Image from 'next/image';
 
 const HeroSection: FC = () => {
   return (
-    <div className="bg-white">
-      {/* Main Hero */}
-      <div className="container-custom py-24">
-        <div className="text-center max-w-4xl mx-auto mb-24">
-          {/* Adjusted Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mt-4 mb-4 text-center break-words">
-            Make Crypto Great Again
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-8">
-            Join the revolution with the most patriotic token on the blockchain. 
-            Simple, secure, and built for true believers.
-          </p>
-
-          {/* CTA Button */}
-          <button className="btn btn-primary px-8 py-3 text-lg">
-            Get Started
-          </button>
+    <div className="bg-white" id="home">
+      {/* Main Hero Section */}
+      <div className="container mx-auto flex flex-col items-center justify-center min-h-screen pt-24 pb-12">
+        {/* Logo */}
+        <div className="relative flex items-center justify-center mb-8">
+          <Image
+            src="/images/logo.png"
+            alt="MCGA Logo"
+            width={160}
+            height={160}
+            className="w-32 h-32 md:w-40 md:h-40 object-contain"
+            priority
+          />
         </div>
 
-        {/* Phone Mockup */}
-        <div className="relative max-w-2xl mx-auto mt-16">
-          <div className="absolute -inset-4 bg-gradient-to-r from-red-500/30 to-blue-500/30 blur-3xl" />
-          <div className="relative">
-            <div className="aspect-[4/3] bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 flex items-center justify-center">
-              <div className="text-white text-xl">App Preview Coming Soon</div>
-            </div>
-          </div>
+        {/* Title and Subtitle */}
+        <div className="text-center max-w-4xl mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Make Crypto Great Again
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700 mb-8">
+            Join the revolution with the most patriotic token on the blockchain.
+            Simple, secure, and built for true believers.
+          </p>
+        </div>
+
+        {/* Buttons */}
+        <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 w-full max-w-md px-4">
+          <a
+            href="https://raydium.io/swap"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary w-full md:w-auto px-8 py-3 text-lg"
+          >
+            Buy Now
+          </a>
+          <a
+            href="#about"
+            className="btn btn-secondary w-full md:w-auto px-8 py-3 text-lg"
+          >
+            Learn More
+          </a>
         </div>
       </div>
 
