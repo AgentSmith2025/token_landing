@@ -15,14 +15,10 @@ const Home: FC = () => {
 
   const [faqOpen, setFaqOpen] = useState<{ [key: string]: boolean }>({});
 
-  const toggleFAQ = (e: MouseEvent<HTMLElement>) => {
-    const target = e.target as HTMLElement;
-    const faqId = target.parentElement?.id;
-    if (faqId) {
-      setFaqOpen((prevFaqOpen) => {
-        return { ...prevFaqOpen, [faqId]: !prevFaqOpen[faqId] };
-      });
-    }
+  const toggleFAQ = (index: number) => {
+    setFaqOpen((prevFaqOpen) => {
+      return { ...prevFaqOpen, [index]: !prevFaqOpen[index] };
+    });
   };
 
   const features = [
@@ -389,86 +385,86 @@ const Home: FC = () => {
             <div className="max-w-3xl mx-auto">
               <div className="space-y-4">
                 <div className="faq-item">
-                  <button id="faq-1" className="faq-button" onClick={(e) => toggleFAQ(e)}>
+                  <button id="faq-1" className="faq-button" onClick={(e) => toggleFAQ(1)}>
                     <span>Is this an official MCGA product?</span>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className={`faq-answer ${faqOpen['faq-1'] ? 'block' : 'hidden'}`}>
+                  <div className={`faq-answer ${faqOpen[1] ? 'block' : 'hidden'}`}>
                     <p>No, this is a community-driven meme token project. We are not affiliated with any political campaign or individual.</p>
                   </div>
                 </div>
 
                 <div className="faq-item">
-                  <button id="faq-2" className="faq-button" onClick={(e) => toggleFAQ(e)}>
+                  <button id="faq-2" className="faq-button" onClick={(e) => toggleFAQ(2)}>
                     <span>What is the official contract address and symbol?</span>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className={`faq-answer ${faqOpen['faq-2'] ? 'block' : 'hidden'}`}>
+                  <div className={`faq-answer ${faqOpen[2] ? 'block' : 'hidden'}`}>
                     <p>Symbol: $MCGA</p>
                     <p>Contract Address: Coming Soon</p>
                   </div>
                 </div>
 
                 <div className="faq-item">
-                  <button id="faq-3" className="faq-button" onClick={(e) => toggleFAQ(e)}>
+                  <button id="faq-3" className="faq-button" onClick={(e) => toggleFAQ(3)}>
                     <span>How can I get $MCGA tokens?</span>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className={`faq-answer ${faqOpen['faq-3'] ? 'block' : 'hidden'}`}>
+                  <div className={`faq-answer ${faqOpen[3] ? 'block' : 'hidden'}`}>
                     <p>You can buy $MCGA on Raydium DEX. Simply connect your Phantom wallet, swap SOL for $MCGA, and you&apos;ll receive your tokens instantly in your wallet.</p>
                   </div>
                 </div>
 
                 <div className="faq-item">
-                  <button id="faq-4" className="faq-button" onClick={(e) => toggleFAQ(e)}>
+                  <button id="faq-4" className="faq-button" onClick={(e) => toggleFAQ(4)}>
                     <span>What is a meme token?</span>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className={`faq-answer ${faqOpen['faq-4'] ? 'block' : 'hidden'}`}>
+                  <div className={`faq-answer ${faqOpen[4] ? 'block' : 'hidden'}`}>
                     <p>A meme token is a cryptocurrency that typically originates from internet memes or cultural phenomena. They represent a fun and community-driven approach to crypto assets.</p>
                   </div>
                 </div>
 
                 <div className="faq-item">
-                  <button id="faq-5" className="faq-button" onClick={(e) => toggleFAQ(e)}>
+                  <button id="faq-5" className="faq-button" onClick={(e) => toggleFAQ(5)}>
                     <span>Which blockchain network is $MCGA minted on?</span>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className={`faq-answer ${faqOpen['faq-5'] ? 'block' : 'hidden'}`}>
+                  <div className={`faq-answer ${faqOpen[5] ? 'block' : 'hidden'}`}>
                     <p>$MCGA is minted on the Solana blockchain, known for its high speed and low transaction costs.</p>
                   </div>
                 </div>
 
                 <div className="faq-item">
-                  <button id="faq-6" className="faq-button" onClick={(e) => toggleFAQ(e)}>
+                  <button id="faq-6" className="faq-button" onClick={(e) => toggleFAQ(6)}>
                     <span>What are $MCGA tokens?</span>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className={`faq-answer ${faqOpen['faq-6'] ? 'block' : 'hidden'}`}>
+                  <div className={`faq-answer ${faqOpen[6] ? 'block' : 'hidden'}`}>
                     <p>$MCGA tokens are fungible crypto assets created and tracked on the Solana blockchain. They represent a fun, community-driven meme token project.</p>
                   </div>
                 </div>
 
                 <div className="faq-item">
-                  <button id="faq-7" className="faq-button" onClick={(e) => toggleFAQ(e)}>
+                  <button id="faq-7" className="faq-button" onClick={(e) => toggleFAQ(7)}>
                     <span>What else should I know?</span>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className={`faq-answer ${faqOpen['faq-7'] ? 'block' : 'hidden'}`}>
+                  <div className={`faq-answer ${faqOpen[7] ? 'block' : 'hidden'}`}>
                     <p>Please note that cryptocurrency investments carry risks. Always do your own research (DYOR) and never invest more than you can afford to lose. For important disclosures about $MCGA, please refer to our Terms page.</p>
                   </div>
                 </div>
