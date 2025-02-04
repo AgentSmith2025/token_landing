@@ -6,22 +6,25 @@ const HeroSection: FC = () => {
       {/* Main Hero */}
       <div className="container-custom py-24">
         <div className="text-center max-w-4xl mx-auto mb-24">
-          <h1 className="heading-xl mb-6">
-            Make Crypto Great Again.
-            <br />
-            No hassle.
+          {/* Adjusted Heading */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mt-4 mb-4 text-center break-words">
+            Make Crypto Great Again
           </h1>
-          <p className="subtitle mb-8">
+
+          {/* Subtitle */}
+          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-8">
             Join the revolution with the most patriotic token on the blockchain. 
             Simple, secure, and built for true believers.
           </p>
-          <button className="btn btn-primary">
+
+          {/* CTA Button */}
+          <button className="btn btn-primary px-8 py-3 text-lg">
             Get Started
           </button>
         </div>
 
         {/* Phone Mockup */}
-        <div className="relative max-w-2xl mx-auto">
+        <div className="relative max-w-2xl mx-auto mt-16">
           <div className="absolute -inset-4 bg-gradient-to-r from-red-500/30 to-blue-500/30 blur-3xl" />
           <div className="relative">
             <div className="aspect-[4/3] bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 flex items-center justify-center">

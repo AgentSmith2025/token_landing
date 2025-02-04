@@ -22,17 +22,29 @@ body {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+.container-custom {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Typography responsive classes */
 .h1 {
-  @apply text-4xl sm:text-5xl lg:text-6xl font-bold;
+  @apply text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mt-6 mb-4;
+}
+
+h1 {
+  text-align: center;
+  word-wrap: break-word;
 }
 
 .h2 {
-  @apply text-3xl sm:text-4xl font-bold;
+  @apply text-3xl sm:text-4xl font-bold leading-snug mt-4 mb-3;
 }
 
 .h3 {
-  @apply text-2xl sm:text-3xl font-bold;
+  @apply text-2xl sm:text-3xl font-bold leading-relaxed mt-4 mb-2;
 }
 
 /* Button styles */
@@ -41,11 +53,19 @@ body {
 }
 
 .btn-primary {
-  @apply btn bg-red-600 text-white hover:bg-red-700;
+  @apply btn bg-red-600 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+  background-color: #e63946;
+  color: #fff;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #d62828;
 }
 
 .btn-secondary {
-  @apply btn bg-white text-gray-900 border border-gray-300 hover:bg-gray-50;
+  @apply btn bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
 }
 
 /* Card styles */
@@ -93,7 +113,7 @@ input, textarea, select {
 
 /* Navigation */
 .nav-link {
-  @apply text-gray-600 hover:text-red-600 transition-colors;
+  @apply text-gray-600 hover:text-red-600 transition-colors duration-200;
 }
 
 /* Mobile menu */
@@ -125,7 +145,7 @@ input, textarea, select {
 
 /* Scroll-to-Top Button Placement */
 .scroll-to-top {
-  @apply fixed bottom-8 right-8 z-50;
+  @apply fixed bottom-8 right-8 z-50 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-colors duration-200;
 }
 
 /* Media queries for specific adjustments */
