@@ -2,171 +2,169 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-/* Base styles */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  @apply text-gray-900 bg-white;
-}
-
-/* Container responsive padding */
-.container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-
-.container-custom {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Typography responsive classes */
-.h1 {
-  @apply text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mt-6 mb-4;
-}
-
-h1 {
-  text-align: center;
-  word-wrap: break-word;
-}
-
-.h2 {
-  @apply text-3xl sm:text-4xl font-bold leading-snug mt-4 mb-3;
-}
-
-.h3 {
-  @apply text-2xl sm:text-3xl font-bold leading-relaxed mt-4 mb-2;
-}
-
-/* Button styles */
-.btn {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-200;
-}
-
-.btn-primary {
-  @apply btn bg-red-600 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
-  background-color: #e63946;
-  color: #fff;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #d62828;
-}
-
-.btn-secondary {
-  @apply btn bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
-}
-
-/* Card styles */
-.card {
-  @apply bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
-}
-
-/* Responsive spacing utilities */
-.section {
-  @apply py-16 md:py-24 px-4 sm:px-6 lg:px-8;
-}
-
-.section-sm {
-  @apply py-12 md:py-16;
-}
-
-/* FAQ Section Specific Styles */
-.faq-section {
-  @apply max-w-6xl mx-auto;
-}
-
-/* Contact Us Section Specific Styles */
-.contact-section {
-  @apply max-w-6xl mx-auto;
-}
-
-/* Grid layouts */
-.grid-responsive {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
-}
-
-.grid-responsive-4 {
-  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
-}
-
-/* Form elements */
-input, textarea, select {
-  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500;
-}
-
-/* Image responsiveness */
-.img-responsive {
-  @apply w-full h-auto object-cover;
-}
-
-/* Navigation */
-.nav-link {
-  @apply text-gray-600 hover:text-red-600 transition-colors duration-200;
-}
-
-/* Mobile menu */
-.mobile-menu {
-  @apply fixed inset-0 z-50 bg-white transform transition-transform duration-300;
-}
-
-.mobile-menu.open {
-  @apply translate-x-0;
-}
-
-.mobile-menu.closed {
-  @apply translate-x-full;
-}
-
-/* Animations */
-.fade-in {
-  @apply opacity-0 animate-[fadeIn_0.3s_ease-in_forwards];
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+@layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
   }
-  to {
-    opacity: 1;
+
+  /* Base styles */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 bg-white;
   }
 }
 
-/* Scroll-to-Top Button Placement */
-.scroll-to-top {
-  @apply fixed bottom-8 right-8 z-50 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-colors duration-200;
-}
-
-/* Media queries for specific adjustments */
-@media (max-width: 640px) {
+@layer components {
   .container {
-    @apply px-4;
+    @apply mx-auto px-4;
   }
   
   .btn {
-    @apply w-full;
+    @apply inline-flex items-center justify-center px-4 py-2 w-full;
+  }
+
+  .container-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .h1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mt-6 mb-4;
+  }
+
+  h1 {
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .h2 {
+    @apply text-3xl sm:text-4xl font-bold leading-snug mt-4 mb-3;
+  }
+
+  .h3 {
+    @apply text-2xl sm:text-3xl font-bold leading-relaxed mt-4 mb-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-red-600 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+    background-color: #e63946;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #d62828;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  .section {
+    @apply py-16 md:py-24 px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-sm {
+    @apply py-12 md:py-16;
+  }
+
+  .faq-section {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .contact-section {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .grid-responsive {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+  }
+
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
+  }
+
+  input, textarea, select {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-red-500 focus:border-red-500;
+  }
+
+  .img-responsive {
+    @apply w-full h-auto object-cover;
+  }
+
+  .nav-link {
+    @apply text-gray-600 hover:text-red-600 transition-colors duration-200;
+  }
+
+  .mobile-menu {
+    @apply fixed inset-0 z-50 bg-white transform transition-transform duration-300;
+  }
+
+  .mobile-menu.open {
+    @apply translate-x-0;
+  }
+
+  .mobile-menu.closed {
+    @apply translate-x-full;
+  }
+
+  .fade-in {
+    @apply opacity-0 animate-[fadeIn_0.3s_ease-in_forwards];
+  }
+
+  .scroll-to-top {
+    @apply fixed bottom-8 right-8 z-50 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Media queries */
+@media (max-width: 640px) {
+  @layer components {
+    .container {
+      @apply px-4;
+    }
+    
+    .btn {
+      @apply w-full;
+    }
   }
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
-  .container {
-    @apply px-6;
+  @layer components {
+    .container {
+      @apply px-6;
+    }
   }
 }
 
 @media (min-width: 1025px) {
-  .container {
-    @apply px-8;
+  @layer components {
+    .container {
+      @apply px-8;
+    }
   }
 }
